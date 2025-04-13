@@ -97,9 +97,6 @@ const VotePage = () => {
           text: result.message,
           icon: 'error',
           confirmButtonText: 'موافق',
-          customClass: {
-            confirmButton: 'swal-button-ok'
-          },
         });
       }
     } catch (error) {

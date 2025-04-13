@@ -114,9 +114,6 @@ export default function RegisterPage() {
         text: `مرحبًا بك ${newUser.name} !`,
         icon: "success",
         confirmButtonText: "تسجيل الدخول",
-        customClass: {
-          confirmButton: 'swal-button-ok'
-        },
       });
 
       router.push("/login");
@@ -126,9 +123,6 @@ export default function RegisterPage() {
         text: error.message || "حدث خطأ.",
         icon: "error",
         confirmButtonText: "موافق",
-        customClass: {
-          confirmButton: 'swal-button-ok'
-        },
       });
     } finally {
       setLoading(false);

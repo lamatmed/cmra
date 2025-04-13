@@ -49,9 +49,6 @@ const Login = () => {
           text: "مرحبًا بك في لوحة التحكم الخاصة بك!",
           icon: "success",
           confirmButtonText: "موافق",
-          customClass: {
-            confirmButton: 'swal-button-ok'
-          },
         });
       } else {
         toast({ title: "خطأ", description: data.message, variant: "destructive" });

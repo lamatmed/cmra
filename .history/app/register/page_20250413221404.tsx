@@ -126,9 +126,6 @@ export default function RegisterPage() {
         text: error.message || "حدث خطأ.",
         icon: "error",
         confirmButtonText: "موافق",
-        customClass: {
-          confirmButton: 'swal-button-ok'
-        },
       });
     } finally {
       setLoading(false);

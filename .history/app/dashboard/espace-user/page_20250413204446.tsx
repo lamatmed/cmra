@@ -49,7 +49,7 @@ export default function Home() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-3">
-            الجالية الموريتانية في انغولا
+            اتحاد خريجي الجزائر
           </h1>
           <p className="text-lg text-gray-700 dark:text-gray-300">
             مرحباً <span className="font-semibold">{user.name}</span> 👋، يمكنك إدارة مساحتك بسهولة.

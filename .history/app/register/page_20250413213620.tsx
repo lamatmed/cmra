@@ -26,7 +26,6 @@ import {
   CameraIcon,
 } from "lucide-react";
 import Uploader from "@/components/Uploader";
-import Swal from "sweetalert2";
 
 export default function RegisterPage() {
   const { user } = useContext(AuthContext) ?? {};

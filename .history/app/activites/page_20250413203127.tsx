@@ -48,7 +48,7 @@ const ActivitiesPage = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
       >
-        اكتشفوا الأنشطة القادمة التي ينظمها المكتب، بما في ذلك ندوات، منتديات، وورشات رقمية تهم الجالية الموريتانية
+       
       </motion.p>
 
       {activities.length === 0 ? (
@@ -58,7 +58,7 @@ const ActivitiesPage = () => {
       ) : (
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {activities.map((activity) => {
-            const formattedDate = new Date(activity.date).toLocaleDateString("fr-FR", {
+            const formattedDate = new Date(activity.date).toLocaleDateString("ar-DZ", {
               weekday: "long",
               year: "numeric",
               month: "long",

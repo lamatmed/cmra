@@ -49,7 +49,7 @@ model Activity {
   title       String
   description String
   date        DateTime
-  imageUrl    String?  // <- champ optionnel pour l'URL de l'image
+  
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

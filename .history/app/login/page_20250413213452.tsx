@@ -9,7 +9,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
 import { LogIn, Phone, Lock } from "lucide-react"; // Import des icônes
-import Swal from "sweetalert2";
 
 const Login = () => {
   const [nni, setNni] = useState("");

@@ -290,14 +290,11 @@ export async function updateActivity(id: string, data: {
   title?: string;
   description?: string;
   date?: string;
-  imageUrl?: string; // <- Ajout du champ imageUrl
 }) {
   return await prisma.activity.update({
     where: { id },
     data: {
-      title: data.title,
-      description: data.description,
-      imageUrl: data.imageUrl,
+      ...data,
       date: data.date ? new Date(data.date) : undefined,
     },
   });

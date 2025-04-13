@@ -239,7 +239,7 @@ export default function ManageActivitiesPage() {
                                 <p className="text-gray-700">{activity.description}</p>
                                 <p className="text-sm text-gray-600">
                                     📅 التاريخ:{" "}
-                                    {new Date(activity.date).toLocaleDateString("fr-FR", {
+                                    {new Date(activity.date).toLocaleDateString("fr-", {
                                         weekday: "long",
                                         year: "numeric",
                                         month: "long",

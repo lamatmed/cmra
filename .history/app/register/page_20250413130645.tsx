@@ -255,12 +255,12 @@ export default function RegisterPage() {
             )}
 
             {/* Boutons de navigation */}
-            <div className="flex justify-between space-x-2">
+            <div className="flex justify-between">
               {step > 1 && (
                 <Button
                   type="button"
                   onClick={() => setStep(step - 1)}
-                  className="bg-gray-500 hover:bg-gray-600"
+                  className="bg-gray-500 hover:bg-gray-600 "
                 >
                   سابق
                 </Button>

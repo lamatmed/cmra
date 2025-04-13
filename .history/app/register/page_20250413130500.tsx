@@ -255,7 +255,7 @@ export default function RegisterPage() {
             )}
 
             {/* Boutons de navigation */}
-            <div className="flex justify-between space-x-2">
+            <div className="flex justify-between">
               {step > 1 && (
                 <Button
                   type="button"
@@ -276,7 +276,7 @@ export default function RegisterPage() {
               ) : (
                 <Button
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white "
+                  className="w-full bg-green-600 hover:bg-green-700 text-white space--1"
                   disabled={loading}
                 >
                     {loading ? "تسجيل..." : "للتسجيل"}

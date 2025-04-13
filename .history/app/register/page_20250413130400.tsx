@@ -255,7 +255,7 @@ export default function RegisterPage() {
             )}
 
             {/* Boutons de navigation */}
-            <div className="flex justify-between space-x-2">
+            <div className="flex justify-between">
               {step > 1 && (
                 <Button
                   type="button"
@@ -269,7 +269,7 @@ export default function RegisterPage() {
                 <Button
                   type="button"
                   onClick={() => setStep(step + 1)}
-                  className="bg-blue-500 hover:bg-blue-600 "
+                  className="bg-blue-500 hover:bg-blue-600"
                 >
                   تخطي
                 </Button>

@@ -255,7 +255,7 @@ export default function RegisterPage() {
             )}
 
             {/* Boutons de navigation */}
-            <div className="flex justify-between space-x-2">
+            <div className="flex justify-between s">
               {step > 1 && (
                 <Button
                   type="button"

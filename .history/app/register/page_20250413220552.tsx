@@ -74,7 +74,7 @@ export default function RegisterPage() {
         text: "رقم الهاتف مطلوب.",
         icon: "error",
         confirmButtonText: "موافق",
-        
+        confirmButton: 'swal-button-ok'
       });
       setLoading(false);
       return;

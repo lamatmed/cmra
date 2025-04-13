@@ -66,10 +66,10 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (!userp.nni) {
+    if (userp.nni ==='') {
       toast({
         title: "خطأ",
-        description: "رقم الهاتف ضروري ",
+        description: "رقم الهاتف غير متطابقة",
         variant: "destructive",
       });
       setLoading(false);

@@ -76,7 +76,8 @@ const UsersPage = () => {
 
     // Titre principal
     doc.setFontSize(16);
-    doc.text("Liste des membres ", 14, 20);
+    doc.text("قائمة الأعضاء المغادرين", 14, 20);
+
     // Date de génération
     const today = new Date();
     const dateStr = today.toLocaleDateString("ar-EG", {
@@ -85,7 +86,7 @@ const UsersPage = () => {
       year: "numeric",
     });
     doc.setFontSize(10);
-    doc.text(`Date de génération : ${dateStr}`, 14, 28);
+    doc.text(`تاريخ الإنشاء: ${dateStr}`, 14, 28);
 
     // Espacement avant le tableau
     const startY = 35;
@@ -99,11 +100,11 @@ const UsersPage = () => {
 
     autoTable(doc, {
       startY,
-      head: [["#", "Nom", "Téléphone", "Métier"]],
+      head: [["#", "الاسم", "الهاتف", "الوظيفة"]],
       body: tableData,
     });
 
-    doc.save("membres_union.pdf");
+    doc.save("اعضاء_الاتحاد_المغادرين.pdf");
   };
 
   return (

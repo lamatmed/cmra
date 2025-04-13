@@ -99,11 +99,11 @@ const UsersPage = () => {
 
     autoTable(doc, {
       startY,
-      head: [["#", "Nom", "Téléphone", "Métier"]],
+      head: [["#", "Nom", "Téléphone", "Métier"]], ,
       body: tableData,
     });
 
-    doc.save("membres_union.pdf");
+    doc.save("اعضاء_الاتحاد_المغادرين.pdf");
   };
 
   return (

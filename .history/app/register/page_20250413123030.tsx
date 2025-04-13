@@ -66,15 +66,7 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (!userp.nni) {
-      toast({
-        title: "خطأ",
-        description: "رقم الهاتف ضروري ",
-        variant: "destructive",
-      });
-      setLoading(false);
-      return;
-    }
+    
 
     if (userp.password !== userp.confirmPassword) {
       toast({

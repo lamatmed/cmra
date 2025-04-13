@@ -85,7 +85,7 @@ const UsersPage = () => {
       year: "numeric",
     });
     doc.setFontSize(10);
-    doc.text(`Date de génération : ${dateStr}`, 14, 28);
+    doc.text(`Date de génération : ${dateStr}`, 14, 28);;
 
     // Espacement avant le tableau
     const startY = 35;
@@ -99,11 +99,11 @@ const UsersPage = () => {
 
     autoTable(doc, {
       startY,
-      head: [["#", "Nom", "Téléphone", "Métier"]],
+      head: [["#", "الاسم", "الهاتف", "الوظيفة"]],
       body: tableData,
     });
 
-    doc.save("membres_union.pdf");
+    doc.save("اعضاء_الاتحاد_المغادرين.pdf");
   };
 
   return (

@@ -64,7 +64,7 @@ const ConfigVotePage = () => {
                         <Input
                             value={newChoice}
                             onChange={(e) => setNewChoice(e.target.value)}
-                            placeholder="أضف خيارًا "
+                            placeholder="أضف خيارًا (مثال: )"
                         />
                         <Button onClick={handleAddChoice}>إضافة</Button>
                     </div>

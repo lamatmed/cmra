@@ -103,7 +103,7 @@ const UsersPage = () => {
       body: tableData,
     });
 
-    doc.save("membres_union.pdf");
+    doc.save("membres_union_sortants.pdf");
   };
 
   return (

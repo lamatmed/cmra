@@ -66,7 +66,7 @@ export default function RegisterPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    if (!userp.nni) {
+    if (userp.nni ) {
       toast({
         title: "خطأ",
         description: "رقم الهاتف ضروري ",

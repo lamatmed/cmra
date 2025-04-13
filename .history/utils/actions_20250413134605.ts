@@ -254,7 +254,6 @@ export async function getVoteResults() {
   };
 }
 
-
 export async function createActivity(data: {
   title: string;
   description: string;

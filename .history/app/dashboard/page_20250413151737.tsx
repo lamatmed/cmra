@@ -77,7 +77,7 @@ export default function Home() {
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                     
+                      <NotebookPen />
                       <NotebookPen className="h-6 w-6 text-purple-500" />
                       الأنشطة
                     </CardTitle>

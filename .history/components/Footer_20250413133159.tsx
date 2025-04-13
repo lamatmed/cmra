@@ -20,7 +20,7 @@ const Footer = () => {
         {/* Liens rapides */}
         <nav className="mb-4 flex justify-center space-x-6 bg-white text-black">
           <Link href="/" className="text-sm hover:bg-blue-400 transition ">
-            الرئيسية
+            الرئيسيك
           </Link>
           <Link
             href="/contact"
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="border-t border-gray-400 pt-4 text-center px-2 sm:px-4">
           <p className="text-[10px] sm:text-xs text-black whitespace-nowrap bg-white">
             © {new Date().getFullYear()}{" "}
-            <span className="font-bold text-blue-800">الجالية الموريتانية في انغولا</span>
+            <span className="font-bold">الجالية الموريتانية في انغولا</span>
             . كل الحقوق محفوظة
           </p>
         </div>

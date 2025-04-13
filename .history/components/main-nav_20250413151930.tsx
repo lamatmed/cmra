@@ -9,8 +9,7 @@ import {
   Users, 
   Clipboard,
   ComputerIcon ,
-  LayoutDashboard,
-  NotebookPen
+  LayoutDashboard ,
 } from "lucide-react"
 
 type NavigationItem = {
@@ -32,7 +31,6 @@ const navigation: Navigation = {
     { name: "مساحتي", href: "/dashboard/espace-user", icon: ComputerIcon},
     { name: "اعضاء", href: "/dashboard/users", icon: Users },
     { name: "انتخاب", href: "/dashboard/config-vote", icon: Clipboard },
-    { name: "الأنشطة", href: "/activites/config", icon: NotebookPen },
   ],
   USER: [
     { name: "لوحه القياده", href: "/dashboard", icon: LayoutDashboard },
@@ -68,7 +66,7 @@ export function MainNav() {
                   : "text-gray-700 bg-white hover:text-blue-500 hover:bg-gray-100"
               )}
             >
-              <Icon className="mr-2 h-5 w-5 text-orange-500" />
+              <Icon className="mr-2 h-5 w-5" />
               {item.name}
             </Link>
           )

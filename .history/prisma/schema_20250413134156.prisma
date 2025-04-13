@@ -44,11 +44,3 @@ model VoteOption {
   votes     Vote[]   @relation("VoteOptionVotes") // Relation inverse avec Vote
 }
 
-model Activity {
-  id          String   @id @default(cuid())
-  title       String
-  description String
-  date        DateTime
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-}

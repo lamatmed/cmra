@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComputerIcon, NotebookPen, Users } from "lucide-react";
+import { ComputerIcon, Users } from "lucide-react";
 import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "@/components/AuthContext";
@@ -77,7 +77,7 @@ export default function Home() {
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                     
+                      <NotebookPen />
                       <NotebookPen className="h-6 w-6 text-purple-500" />
                       الأنشطة
                     </CardTitle>

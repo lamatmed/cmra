@@ -3,16 +3,16 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComputerIcon, NotebookPen, Users } from "lucide-react";
+import { ComputerIcon, Users } from "lucide-react";
 import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "@/components/AuthContext";
-
+import { useRouter } from "next/navigation";
 import { FiClipboard } from "react-icons/fi";
 
 export default function Home() {
   const { user } = useContext(AuthContext) ?? {};
-
+  const router = useRouter();
 
   if (!user) return null;
 
@@ -73,24 +73,7 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                     
-                      <NotebookPen className="h-6 w-6 text-purple-500" />
-                      الأنشطة
-                    </CardTitle>
-                    <CardDescription>إضافة وتعديل الأنشطة العامة</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button asChild className="w-full">
-                      <Link href="/activites/config">دخول</Link>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
+              
             </>
           )}
 

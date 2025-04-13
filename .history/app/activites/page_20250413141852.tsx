@@ -3,17 +3,17 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaRegCalendarAlt } from "react-icons/fa";
-import { getAllActivities } from "@/utils/actions";
+import { getAllActivities } from "@/utils/actions"; // Importe la fonction de récupération des activités
 import Loader from "@/components/Loader";
 
 const ActivitiesPage = () => {
-  const [activities, setActivities] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [activities, setActivities] = useState<any[]>([]); // État pour stocker les activités
+  const [loading, setLoading] = useState(true); // État pour gérer le chargement
 
   useEffect(() => {
     const fetchActivities = async () => {
       try {
-        const fetchedActivities = await getAllActivities();
+        const fetchedActivities = await getAllActivities(); // Appel à la fonction utilitaire
         setActivities(fetchedActivities);
       } catch (error) {
         console.error("Erreur lors de la récupération des activités:", error);
@@ -25,7 +25,9 @@ const ActivitiesPage = () => {
     fetchActivities();
   }, []);
 
-  if (loading) return <Loader />;
+  if (loading) {
+    return <Loader;
+  }
 
   return (
     <section
@@ -51,36 +53,27 @@ const ActivitiesPage = () => {
       </motion.p>
 
       {activities.length === 0 ? (
-        <p className="text-center text-xl text-gray-300">لا توجد أنشطة حالياً.</p>
+        <p className="text-center text-xl text-gray-300">لا توجد أنشطة حالياً.</p> // Message si aucune activité
       ) : (
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {activities.map((activity) => {
-            const formattedDate = new Date(activity.date).toLocaleDateString("fr-FR", {
-              weekday: "long",
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            });
-
-            return (
-              <motion.div
-                key={activity.id}
-                className="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">{activity.title}</h3>
-                  <p className="text-gray-600 mb-4">{activity.description}</p>
-                  <div className="flex items-center space-x-2 text-gray-500 rtl:space-x-reverse">
-                    <FaRegCalendarAlt className="w-5 h-5" />
-                    <span>{formattedDate}</span>
-                  </div>
+          {activities.map((activity) => (
+            <motion.div
+              key={activity.id}
+              className="bg-white text-gray-800 rounded-lg shadow-lg overflow-hidden"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-4">{activity.title}</h3>
+                <p className="text-gray-600 mb-4">{activity.description}</p>
+                <div className="flex items-center space-x-2 text-gray-500">
+                  <FaRegCalendarAlt className="w-5 h-5" />
+                  <span>{activity.date}</span>
                 </div>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       )}
     </section>

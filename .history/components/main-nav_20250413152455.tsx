@@ -68,7 +68,7 @@ export function MainNav() {
                   : "text-gray-700 bg-white hover:text-blue-500 hover:bg-gray-100"
               )}
             >
-              <Icon className="mr-2 h-5 w-5 text-orange-500" />
+              <Icon className="mr-2 h-5 w-5 text-orange-400" />
               {item.name}
             </Link>
           )

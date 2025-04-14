@@ -93,7 +93,9 @@ const ActivitiesPage = () => {
           >
             {sortOrder === "asc" ? "الأحدث أولاً" : "الأقدم أولاً"}
           </Button>
-        
+          <Button onClick={exportToPDF} className="bg-red-600 hover:bg-red-700 text-white">
+            تحميل PDF
+          </Button>
         </div>
       </div>
 

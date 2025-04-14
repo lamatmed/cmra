@@ -43,7 +43,7 @@ const Contact = () => {
             <div className="flex items-center gap-4 bg-gray-50 px-4 py-3 rounded-xl shadow-sm">
               <Phone className="w-6 h-6 text-indigo-500" />
               <span className="text-gray-800 text-base sm:text-lg font-medium">
-                939465408
+                939
               </span>
             </div>
 

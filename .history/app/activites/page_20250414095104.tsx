@@ -51,13 +51,29 @@ const ActivitiesPage = () => {
     currentPage * ITEMS_PER_PAGE
   );
 
-  
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text("\u0642\u0627\u0626\u0645\u0629 \u0627\u0644\u0623\u0646\u0634\u0637\u0629", 105, 20, { align: "center" });
+
+    filteredActivities.forEach((act, idx) => {
+      doc.setFontSize(12);
+      doc.text(`${idx + 1}. ${act.title}`, 20, 40 + idx * 10);
+      doc.text(
+        `\ud83d\udcc5 ${new Date(act.date).toLocaleDateString("fr-FR")}`,
+        20,
+        45 + idx * 10
+      );
+    });
+
+    doc.save("activites.pdf");
+  };
 
   if (loading) return <Loader />;
 
   return (
     <section
-      className="w-full min-h-screen bg-gradient-to-r from-green-600 via-emerald-500 to-lime-400 text-white px-6 sm:px-8 md:px-10 py-12"
+      className="w-full min-h-screen bg-gradient-to-r from-green-400 to-blue-500 text-white px-6 sm:px-8 md:px-10 py-12"
       dir="rtl"
     >
       <motion.h1
@@ -93,7 +109,9 @@ const ActivitiesPage = () => {
           >
             {sortOrder === "asc" ? "الأحدث أولاً" : "الأقدم أولاً"}
           </Button>
-        
+          <Button onClick={exportToPDF} className="bg-red-600 hover:bg-red-700 text-white">
+            تحميل PDF
+          </Button>
         </div>
       </div>
 
@@ -138,7 +156,7 @@ const ActivitiesPage = () => {
                   </div>
                   <Button
                     className="mt-4"
-                    onClick={() => router.push(`/activites/${activity.id}`)}
+                    onClick={() => router.push(`/activities/${activity.id}`)}
                   >
                     تفاصيل النشاط
                   </Button>

@@ -1,16 +1,22 @@
+// app/activities/[id]/page.tsx
 import { getActivityById } from "@/utils/actions";
 import { notFound } from "next/navigation";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
-export default async function ActivityDetailPage({ params }: { params: { id: string } }) {
-    // Attente du paramètre `id` avant de l'utiliser
-    const { id } = await params; // Attendre explicitement
+// Fonction pour générer les paramètres statiques (les ID des activités)
+export async function generateStaticParams() {
+    const activities = await getAllActivities();
+    return activities.map((activity: any) => ({
+        id: activity.id,
+    }));
+}
 
-    const activity = await getActivityById(id);
+const ActivityDetailPage = async ({ params }: { params: { id: string } }) => {
+    const activity = await getActivityById(params.id);
 
+    // Si l'activité n'est pas trouvée, retourner une page 404
     if (!activity) return notFound();
 
     const formattedDate = new Date(activity.date).toLocaleDateString("fr-FR", {
@@ -23,6 +29,7 @@ export default async function ActivityDetailPage({ params }: { params: { id: str
     return (
         <section className="min-h-screen bg-gradient-to-br from-green-600 to-emerald-500 text-white px-6 py-12" dir="ltr">
             <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden text-gray-900">
+                {/* Afficher l'image si elle est présente */}
                 {activity.imageUrl && (
                     <Image
                         src={activity.imageUrl}
@@ -40,15 +47,16 @@ export default async function ActivityDetailPage({ params }: { params: { id: str
                     </div>
                     <p className="text-lg">{activity.description}</p>
                     <div className="pt-4">
-                        <Link href="/activites">
-                            <Button className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
+                        <Link href="/activities">
+                            <button className="px-6 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition">
                                 ← Retour aux activités
-                            </Button>
+                            </button>
                         </Link>
                     </div>
                 </div>
             </div>
         </section>
     );
-}
+};
 
+export default ActivityDetailPage;

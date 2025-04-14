@@ -77,7 +77,7 @@ const ActivityPage = () => {
                         onClick={() => window.history.back()} // Retour à la page précédente
                         className="py-2 px-4 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
                     >
-                        العودة إلى الأنشطة
+                        Retour aux activités
                     </Button>
                 </div>
             </div>

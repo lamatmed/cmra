@@ -19,7 +19,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 max-w-7xl text-center">
         {/* Liens rapides */}
         <nav className="mb-4 flex justify-center space-x-6 bg-white text-black">
-          <Link href="/" className="text-sm hover:text-blue-400  ">
+          <Link href="/" className="text-sm hover:text-blue-400 transition ">
             الرئيسية
           </Link>
           <Link
@@ -30,7 +30,7 @@ const Footer = () => {
           </Link>
           <Link
             href="/about"
-            className="text-sm hover:text-blue-400 "
+            className="text-sm hover:text-blue-400 transition"
           >
             من نحن
           </Link>

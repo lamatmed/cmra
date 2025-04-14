@@ -30,7 +30,7 @@ const Footer = () => {
           </Link>
           <Link
             href="/about"
-            className="text-sm hover:text-blue-400 "
+            className="text-sm hover:text-blue-400 transition"
           >
             من نحن
           </Link>

@@ -135,7 +135,7 @@ export async function addChoice(label: string) {
     if (existing) {
       return {
         success: false,
-        message: "هذا الخيار موجود بالفعل",
+        message: "هذا الخيار موجود بالفعل.",
       };
     }
 
@@ -145,7 +145,7 @@ export async function addChoice(label: string) {
 
     return {
       success: true,
-      message: "تمت إضافة الخيار بنجاح",
+      message: "تمت إضافة الخيار بنجاح.",
       choice,
     };
   } catch (error) {
@@ -154,7 +154,7 @@ export async function addChoice(label: string) {
       message:
         error instanceof Error
           ? error.message
-          : "حدث خطأ غير معروف أثناء الإضافة",
+          : "حدث خطأ غير معروف أثناء الإضافة.",
     };
   }
 }
@@ -210,11 +210,11 @@ export async function castVote(userId: string, choice: string) {
       },
     });
 
-    return { success: true, message: "تم تسجيل التصويت بنجاح", vote };
+    return { success: true, message: "تم تسجيل التصويت بنجاح.", vote };
   } catch (error) {
     return {
       success: false,
-      message: error instanceof Error ? error.message : "حدث خطأ غير معروف"
+      message: error instanceof Error ? error.message : "حدث خطأ غير معروف."
     };
   }
 }

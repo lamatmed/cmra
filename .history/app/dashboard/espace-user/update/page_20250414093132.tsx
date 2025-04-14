@@ -92,12 +92,12 @@ const UserProfile = () => {
 
       toast({
         title: 'تم التحديث بنجاح',
-        description: 'تم تحديث معلوماتك بنجاح',
+        description: 'تم تحديث معلوماتك بنجاح.',
       });
     } catch (error) {
       toast({
         title: 'خطأ',
-        description: 'تعذر تحديث معلوماتك',
+        description: 'تعذر تحديث معلوماتك.',
         variant: 'destructive',
       });
     }

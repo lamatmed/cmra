@@ -108,9 +108,6 @@ const VotePage = () => {
         text: 'فشل التصويت، يرجى المحاولة مرة أخرى',
         icon: 'error',
         confirmButtonText: 'موافق',
-        customClass: {
-          confirmButton: 'swal-button-ok'
-        },
       });
     } finally {
       setLoading(false);

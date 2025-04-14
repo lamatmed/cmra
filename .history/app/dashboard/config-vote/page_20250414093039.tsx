@@ -42,7 +42,7 @@ const ConfigVotePage = () => {
     const handleDeleteChoice = async (choiceId: string) => {
         const result = await deleteChoice(choiceId);
         if (result.success) {
-            toast({ title: "تم الحذف", description: "تم حذف الخيار" });
+            toast({ title: "تم الحذف", description: "تم حذف الخيار." });
             setChoices((prev) => prev.filter((choice) => choice.id !== choiceId));
         } else {
             toast({ title: "خطأ", description: result.message, variant: "destructive" });

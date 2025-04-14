@@ -214,7 +214,7 @@ export async function castVote(userId: string, choice: string) {
   } catch (error) {
     return {
       success: false,
-      message: error instanceof Error ? error.message : "حدث خطأ غير معروف"
+      message: error instanceof Error ? error.message : "حدث خطأ غير معروف."
     };
   }
 }

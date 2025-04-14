@@ -210,11 +210,11 @@ export async function castVote(userId: string, choice: string) {
       },
     });
 
-    return { success: true, message: "تم تسجيل التصويت بنجاح", vote };
+    return { success: true, message: "تم تسجيل التصويت بنجاح.", vote };
   } catch (error) {
     return {
       success: false,
-      message: error instanceof Error ? error.message : "حدث خطأ غير معروف"
+      message: error instanceof Error ? error.message : "حدث خطأ غير معروف."
     };
   }
 }

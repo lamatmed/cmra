@@ -75,7 +75,7 @@ const UsersPage = () => {
           setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
           Swal.fire('تم الحذف!', 'تم حذف المستخدم', 'success');
         } catch (error) {
-          Swal.fire('خطأ', "تعذر حذف آخر مسؤول", 'error');
+          Swal.fire('خطأ', "تعذر حذف آخر مسؤول.", 'error');
         }
       }
     });

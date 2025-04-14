@@ -164,12 +164,9 @@ export default function ManageActivitiesPage() {
         } catch (error) {
             Swal.fire({
                 title: "خطأ",
-                text: "تعذر حذف النشاط",
+                text: "تعذر حذف النشاط.",
                 icon: "error",
                 confirmButtonText: "موافق",
-                customClass: {
-                    confirmButton: 'swal-button-ok'
-                },
             });
         } finally {
             setLoading(false);

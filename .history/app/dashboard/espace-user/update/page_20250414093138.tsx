@@ -97,7 +97,7 @@ const UserProfile = () => {
     } catch (error) {
       toast({
         title: 'خطأ',
-        description: 'تعذر تحديث معلوماتك',
+        description: 'تعذر تحديث معلوماتك.',
         variant: 'destructive',
       });
     }

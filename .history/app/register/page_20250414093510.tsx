@@ -71,7 +71,7 @@ export default function RegisterPage() {
     if (!userp.nni) {
       Swal.fire({
         title: "خطأ",
-        text: "رقم الهاتف مطلوب",
+        text: "رقم الهاتف مطلوب.",
         icon: "error",
         confirmButtonText: "موافق",
         customClass: {

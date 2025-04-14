@@ -134,12 +134,9 @@ export default function ManageActivitiesPage() {
         } catch (error) {
             Swal.fire({
                 title: "خطأ",
-                text: "تعذر تعديل النشاط",
+                text: "تعذر تعديل النشاط.",
                 icon: "error",
                 confirmButtonText: "موافق",
-                customClass: {
-                    confirmButton: 'swal-button-ok'
-                },
             });
         } finally {
             setLoading(false);
@@ -154,22 +151,16 @@ export default function ManageActivitiesPage() {
             setActivities(updated);
             Swal.fire({
                 title: "تم الحذف",
-                text: "تم حذف النشاط بنجاح",
+                text: "تم حذف النشاط بنجاح.",
                 icon: "success",
                 confirmButtonText: "موافق",
-                customClass: {
-                    confirmButton: 'swal-button-ok'
-                },
             });
         } catch (error) {
             Swal.fire({
                 title: "خطأ",
-                text: "تعذر حذف النشاط",
+                text: "تعذر حذف النشاط.",
                 icon: "error",
                 confirmButtonText: "موافق",
-                customClass: {
-                    confirmButton: 'swal-button-ok'
-                },
             });
         } finally {
             setLoading(false);

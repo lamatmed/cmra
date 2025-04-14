@@ -68,7 +68,7 @@ const Login = () => {
         });
       }
     } catch (error) {
-      toast({ title: "خطأ", description: "حدث خطأ أثناء المعالجة", variant: "destructive" });
+      toast({ title: "خطأ", description: "حدث خطأ أثناء المعالجة.", variant: "destructive" });
 
       // عرض تنبيه SweetAlert في حالة حدوث استثناء
       Swal.fire({

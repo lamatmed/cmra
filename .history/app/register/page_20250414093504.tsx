@@ -71,7 +71,7 @@ export default function RegisterPage() {
     if (!userp.nni) {
       Swal.fire({
         title: "خطأ",
-        text: "رقم الهاتف مطلوب",
+        text: "رقم الهاتف مطلوب.",
         icon: "error",
         confirmButtonText: "موافق",
         customClass: {
@@ -86,7 +86,7 @@ export default function RegisterPage() {
     if (userp.password !== userp.confirmPassword) {
       Swal.fire({
         title: "خطأ",
-        text: "كلمات المرور غير متطابقة",
+        text: "كلمات المرور غير متطابقة.",
         icon: "error",
         confirmButtonText: "موافق",
         customClass: {

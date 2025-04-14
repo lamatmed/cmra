@@ -167,9 +167,7 @@ export default function ManageActivitiesPage() {
                 text: "تعذر حذف النشاط",
                 icon: "error",
                 confirmButtonText: "موافق",
-                customClass: {
-                    confirmButton: 'swal-button-ok'
-                },
+                
             });
         } finally {
             setLoading(false);

@@ -55,14 +55,14 @@ const UsersPage = () => {
       setUsers((prevUsers) => prevUsers.map((user) => (user.id === userId ? { ...user, ...updatedData } : user)));
       toast({ title: "تم تعديل المستخدم", description: "تم تحديث المعلومات بنجاح" });
     } catch (error) {
-      toast({ title: "خطأ", description: "تعذر تعديل هذا المستخدم", variant: "destructive" });
+      toast({ title: "خطأ", description: "تعذر تعديل هذا المستخدم.", variant: "destructive" });
     }
   };
 
   const handleDeleteUser = async (userId: string) => {
     Swal.fire({
       title: 'هل أنت متأكد؟',
-      text: "هذه العملية غير قابلة للتراجع",
+      text: "هذه العملية غير قابلة للتراجع.",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -73,9 +73,9 @@ const UsersPage = () => {
         try {
           await deleteUser(userId);
           setUsers((prevUsers) => prevUsers.filter((user) => user.id !== userId));
-          Swal.fire('تم الحذف!', 'تم حذف المستخدم', 'success');
+          Swal.fire('تم الحذف!', 'تم حذف المستخدم.', 'success');
         } catch (error) {
-          Swal.fire('خطأ', "تعذر حذف آخر مسؤول", 'error');
+          Swal.fire('خطأ', "تعذر حذف آخر مسؤول.", 'error');
         }
       }
     });

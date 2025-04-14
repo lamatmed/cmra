@@ -69,74 +69,51 @@ const VotePage = () => {
   }
 
   const handleVote = async (choice: string) => {
-    // عرض نافذة التأكيد
-    const confirmVote = await Swal.fire({
-      title: 'هل أنت متأكد؟',
-      text: `ستصوت لخيار ${choice}. هل تؤكد؟`,
-      icon: 'question',
-      showCancelButton: true,
-      confirmButtonText: 'نعم',
-      cancelButtonText: 'لا',
-      customClass: {
-        confirmButton: 'swal-button-ok',
-        cancelButton: 'swal-button-cancel',
-      },
-    });
+    setSelectedVote(choice);
+    setLoading(true);
 
-    // إذا أكد المستخدم، تابع التصويت
-    if (confirmVote.isConfirmed) {
-      setSelectedVote(choice);
-      setLoading(true);
+    try {
+      const result = await castVote(user.id, choice);
 
-      try {
-        const result = await castVote(user.id, choice);
-
-        if (result.success) {
-          Swal.fire({
-            title: 'تم بنجاح',
-            text: `لقد قمت بالتصويت لخيار ${choice}.`,
-            icon: 'success',
-            confirmButtonText: 'حسناً',
-            customClass: {
-              confirmButton: 'swal-button-ok',
-            },
-          });
-
-          const updatedChoices = results.choices.map((item) =>
-            item.label === choice
-              ? {
-                ...item,
-                votes: item.votes + 1,
-                percentage: ((item.votes + 1) / (results.totalVotes + 1)) * 100,
-              }
-              : item
-          );
-
-          setResults({ ...results, totalVotes: results.totalVotes + 1, choices: updatedChoices });
-        } else {
-          Swal.fire({
-            title: 'خطأ',
-            text: result.message,
-            icon: 'error',
-            confirmButtonText: 'حسناً',
-            customClass: {
-              confirmButton: 'swal-button-ok',
-            },
-          });
-        }
-      } catch (error) {
+      if (result.success) {
         Swal.fire({
-          title: 'خطأ',
-          text: 'فشل التصويت، حاول مرة أخرى.',
-          icon: 'error',
-          confirmButtonText: 'حسناً',
+          title: 'نجاح',
+          text: `لقد صوتت لـ ${choice}.`,
+          icon: 'success',
+          confirmButtonText: 'موافق',
           customClass: {
-            confirmButton: 'swal-button-ok',
+            confirmButton: 'swal-button-ok'
           },
         });
-      } finally {
-        setLoading(false);
+
+        const updatedChoices = results.choices.map((item) =>
+          item.label === choice ? { ...item, votes: item.votes + 1, percentage: ((item.votes + 1) / (results.totalVotes + 1)) * 100 } : item
+        );
+
+        setResults({ ...results, totalVotes: results.totalVotes + 1, choices: updatedChoices });
+      } else {
+        Swal.fire({
+          title: 'خطأ',
+          text: result.message,
+          icon: 'error',
+          confirmButtonText: 'موافق',
+          customClass: {
+            confirmButton: 'swal-button-ok'
+          },
+        });
       }
+    } catch (error) {
+      Swal.fire({
+        title: 'خطأ',
+        text: 'فشل التصويت، يرجى المحاولة مرة أخرى',
+        icon: 'error',
+        confirmButtonText: 'موافق',
+        customClass: {
+          confirmButton: 'swal-button-ok'
+        },
+      });
+    } finally {
+      setLoading(false);
     }
   };
 

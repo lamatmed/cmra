@@ -81,7 +81,7 @@ const ConfigVotePage = () => {
                     </div>
 
                     <div className="flex justify-center mt-6">
-                        <Button onClick={() => router.push("/dashboard/espace-user")}>عودة</Button>
+                        <Button onClick={() => router.push("/dashboard/espace")}>عودة</Button>
                     </div>
                 </CardContent>
             </Card>

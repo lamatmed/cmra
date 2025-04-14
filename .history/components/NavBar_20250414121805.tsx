@@ -45,10 +45,10 @@ export default function NavBar() {
           <Image src={"/rim.jpg"} alt="logo" width={60} height={60} />
         </Link>
         <Link
-          href="/about"
+          href="/activites"
           className="text-sm font-bold text-blue-600 hover:text-blue-900 bg-white p-1 rounded"
         >
-          من نحن 
+          نشاطات
         </Link>
 
         {/* Bouton Menu Mobile */}
@@ -117,7 +117,7 @@ export default function NavBar() {
               <DropdownMenuLabel>
                 <div className="flex items-center space-x-2">
                   <Image
-                    src={user.photo && user.photo !== "" ? user.photo : "/logo.png"}
+                    src={user.photo && user.photo !== "" ? user.photo : "/"}
                     alt={`Photo de ${user.name}`}
                     width={32}
                     height={32}

@@ -42,7 +42,7 @@ export default function NavBar() {
       {/* Logo + Menu mobile */}
       <div className="flex items-center space-x-4">
         <Link href="/">
-          <Image src={"/logo.png"} alt="logo" width={60} height={60} />
+          <Image src={"/"} alt="logo" width={60} height={60} />
         </Link>
         <Link
           href="/about"
